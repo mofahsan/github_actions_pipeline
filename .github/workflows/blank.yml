@@ -43,7 +43,7 @@ jobs:
 
       - name: Run SSH command
         run: |
-          ssh -o StrictHostKeyChecking=no -tt ${{vars.HOST}}@${{vars.USER}} "mkdir /home/ahsan_witslab/test/newfolder"
+          ssh -o StrictHostKeyChecking=no -tt ${{vars.USER}}@${{vars.HOST}} "mkdir /home/ahsan_witslab/test/newfolder"
 
 
 
