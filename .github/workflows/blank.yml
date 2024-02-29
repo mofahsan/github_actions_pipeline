@@ -29,6 +29,17 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Run SSH command
+        run: |
+          ssh -o StrictHostKeyChecking=no -tt $USER@$HOST "mkdir /home/ahsan_witslab/test/newfolder"
+
+
+
       - name: Print a secret
         run: |
           echo "SSH KEY ${{secrets.SSH_KEY}}"
