@@ -33,6 +33,8 @@ jobs:
         run: |
           HOST="${{vars.HOST}}"
           USER="${{vars.USER}}"
+          export HOST USER
+
 
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.3
