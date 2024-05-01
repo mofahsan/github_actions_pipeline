@@ -27,33 +27,33 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: ls
 
-      - name: DEFINE HOST AND USER
-        run: |
-          HOST="${{vars.HOST}}"
-          USER="${{vars.USER}}"
-          export HOST USER
-
-
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Run SSH command
-        run: |
-          ssh -o StrictHostKeyChecking=no -tt $USER@$HOST "mkdir /home/ahsan_witslab/test/newfolder"
+      # - name: DEFINE HOST AND USER
+      #   run: |
+      #     HOST="${{vars.HOST}}"
+      #     USER="${{vars.USER}}"
+      #     export HOST USER
 
 
+      # - name: Set up SSH
+      #   uses: webfactory/ssh-agent@v0.5.3
+      #   with:
+      #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Print a secret
-        run: |
-          echo "SSH KEY ${{secrets.SSH_KEY}}"
-          echo "SSH USERNAME ${{secrets.SSH_USERNAME}}"
+      # - name: Run SSH command
+      #   run: |
+      #     ssh -o StrictHostKeyChecking=no -tt $USER@$HOST "mkdir /home/ahsan_witslab/test/newfolder"
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+
+
+      # - name: Print a secret
+      #   run: |
+      #     echo "SSH KEY ${{secrets.SSH_KEY}}"
+      #     echo "SSH USERNAME ${{secrets.SSH_USERNAME}}"
+
+      # # Runs a set of commands using the runners shell
+      # - name: Run a multi-line script
+      #   run: |
+      #     echo Add other actions to build,
+      #     echo test, and deploy your project.
